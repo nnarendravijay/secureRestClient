@@ -1,0 +1,3491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.nnalabothula.SecureRestClientTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2016-01-09T01:03:41" hostname="nnalabot2-mac" time="2.442">
+  <properties/>
+  <testcase name="testGet" classname="com.nnalabothula.SecureRestClientTest" time="0.882"/>
+  <testcase name="testPut" classname="com.nnalabothula.SecureRestClientTest" time="0.074"/>
+  <testcase name="testPost" classname="com.nnalabothula.SecureRestClientTest" time="0.099"/>
+  <testcase name="testFormDataMultiPartPost" classname="com.nnalabothula.SecureRestClientTest" time="0.146"/>
+  <testcase name="testBuildUri" classname="com.nnalabothula.SecureRestClientTest" time="0.029"/>
+  <testcase name="testHeaderManagement" classname="com.nnalabothula.SecureRestClientTest" time="0.102"/>
+  <testcase name="testSecureGet" classname="com.nnalabothula.SecureRestClientTest" time="0.709"/>
+  <testcase name="testSecurePut" classname="com.nnalabothula.SecureRestClientTest" time="0.053"/>
+  <testcase name="testGetWithQueryParams" classname="com.nnalabothula.SecureRestClientTest" time="0.051"/>
+  <testcase name="testSecurePost" classname="com.nnalabothula.SecureRestClientTest" time="0.034"/>
+  <testcase name="testFormPost" classname="com.nnalabothula.SecureRestClientTest" time="0.085"/>
+  <testcase name="testSecureDelete" classname="com.nnalabothula.SecureRestClientTest" time="0.045"/>
+  <testcase name="testDelete" classname="com.nnalabothula.SecureRestClientTest" time="0.049"/>
+  <testcase name="testGetWithEncoding" classname="com.nnalabothula.SecureRestClientTest" time="0.074"/>
+  <testcase name="testBuildUriFromTemplate" classname="com.nnalabothula.SecureRestClientTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/nnalabot/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.9/f918aa891c5402deb6b4dc82862699bb82602a2e/slf4j-simple-1.7.9.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/nnalabot/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.1.3/d90276fff414f06cb375f2057f6778cd63c6082f/logback-classic-1.1.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
+[Thread-5] INFO org.mockserver.mockserver.MockServer - MockServer started on port: 1080
+[nioEventLoopGroup-3-1] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/ResourceA/1"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "headers" : [ {
+	      "name" : "Content-Type",
+	      "values" : [ "application/json" ]
+	    } ],
+	    "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+
+[nioEventLoopGroup-3-3] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "PUT",
+	    "path" : "/ResourceA/1",
+	    "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "headers" : [ {
+	      "name" : "Content-Type",
+	      "values" : [ "application/json" ]
+	    } ],
+	    "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = true
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ for request:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+
+[nioEventLoopGroup-3-4] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "POST",
+	    "path" : "/ResourceA",
+	    "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 201,
+	    "headers" : [ {
+	      "name" : "Location",
+	      "values" : [ "https://www.mock-server.com" ]
+	    } ]
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "statusCode" : 201,
+	  "headers" : [ {
+	    "name" : "Location",
+	    "values" : [ "https://www.mock-server.com" ]
+	  } ]
+	}
+
+ for request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+
+[nioEventLoopGroup-3-5] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "POST",
+	    "path" : "/MultiFileUpload"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 201,
+	    "headers" : [ {
+	      "name" : "Location",
+	      "values" : [ "https://www.mock-server.com" ]
+	    } ]
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "multipart/form-data;boundary=Boundary_1_1217803181_1452301422319" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "MIME-Version",
+	    "values" : [ "1.0" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "4475" ]
+	  } ],
+	  "body" : "--Boundary_1_1217803181_1452301422319\r\nContent-Type: application/octet-stream\r\nContent-Disposition: form-data; name=\"file1\"\r\n\r\n����\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u000Bsamplealias\u0000\u0000\u0001O�\u0002��\u0000\u0000\u0005\u00000�\u0004�0\u000E\u0006\n+\u0006\u0001\u0004\u0001*\u0002\u0011\u0001\u0001\u0005\u0000\u0004�\u0004�����\u0018U\b\u001C���o\u00010��=z��!�9h�ܪ\u0018�5���\u001D�]]>&#x9d;<![CDATA[��g�s\t&�!@!\u001Fh]]>&#x7f;<![CDATA[\"z�A�ܧ'�Q��˾��\u0006�\u0007|�]?v4\u0012&\u000E5:Gs;����\\\u0002i;��!a$����=X_\u001C��Ǧ|_A����S��\t�XO?�ۂ5z�\u000B%��Y��]�>j�J.��v^�Ͷ�n�\u0012��E�3=�`���\u000BZ}mf�\u0011e\u0001��1��\u0006�o)���������L\u001AL�1���8\u001D��<\u0006�ӗjz�h7*K��\u001F���S�$\u0014,+6L1\u0014] F���6��\u000E\u001B�qG'\\\b�\u0010�#5h��G�0�@��c�\u0002p�!\u001ES�w�\"f\u0019@�c�̃b\u0014�U��@��\u000E���-��m\u001B�@�L����%6�X�ģ�[�\n'!�j���\u000BR]]>&#x7f;<![CDATA[Q��p\u0019X���]\f��i���z!ޑ�\u0003�\u001F$����j.�}\u0013\u0007E�%�\"җaБ{j�������1�?K������\u001A�\u0016�\u0018�����\u001FW�m\u001C�ݴ�\f�Lָ#\u000B�\u0015\u0000E]]>&#x7f;<![CDATA[jy������*\f��\u0005\u0016���_�@`�s�9�\\��u�[ϟvh�\\�\n-B:���h�q�`b6�����8?0���=�[�\ffG]��\u0000�C\u0014�A0*ל�\u0011p�DsC��A63j���p\u0003�\u0001�\u0005��V�� *��D��q� ��d�\u0003�ZN�s\u0019���D�76>a�\u000B�\"�\u0018d�@��\u0005\u0003��pAf��\u0003\u0011�{\u001E\u001Cd��\u0006&���D]]>&#x7f;<![CDATA[\u001AU\u0010>]\u000E[��S�u\\C��<!�\u001B�.�`\fǵd�.\u001B\\\u000F5]]>&#x7f;<![CDATA[iD@�F~��\b�ǹ��'��A1�uP�^�V��-U��\u001C\u0003��c)�4��$�'��\u000F���'��rI�Q\\,\b$�2�vՑ2�\t#NU�W)'w��\t,m6a:�d�\u0001t��5��O���3^巠Ҳ\u0006���\u001B��&q\u00037\u00134�А��\\\u0006[\fb\u001AL�r(�H0�Suv~\n[-1��\u0012�x�`0\n�>v�΍d~e�M�ޖn�f� ^\f\u00119\u000F\f���Zߐ$�ݵ�ٖDeB�]]>&#x7f;<![CDATA[��a�3�&�;tQ\u0017�|7m?&`U�P\u0000�w\u0003\u0015��emjI�x�/#�4�~\u0015�\u0018����V�\u0004��\u0006{�0$\u001A�/D�X3^�z��c�i]�\u0015�\\Kr<(\u0006���f�?�`\u0013Q}\u0006\u0015!�\u001E]����\u000B�\u0019≇Qt\u0006A��I�I>$��FΑ��ưq\u001E�;D���[\u000F9�\u0006\u0001\u001AF�r�q��3r{lI��E�+���d�%\u0001X���\u001B\u0002�e\f0�\u000E�R\u001B�t�H%��~���#p��ό��\u0005ɏYŢ��zzi����9��^��<��\u0018�|Mu��'0�'DԪe{��R�^\u0003�h\u0004X�L�.�ۤ>B\u0006�`܎�ρy���\u0017\u0006\u0017�r�@��\u001Dä\u001A���t��-ﴃ�^�\u001Eh��H?���`U\u001EE��+E��\u001Bِ\u0010�qy�Ҝi�Z��Jp6V㓎��\u0004����d�����\u0002}�-^�\u001F8�Ȑ�W�����8��X����)\u00106�\fr�\u000E\b�\u0006�\u0000\u0000\u0000\u0001\u0000\u0005X.509\u0000\u0000\u0002�0�\u0002�0�\u0002A\u0002\u0002\u0006\"0\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u00000j1\u00100\u000E\u0006\u0003U\u0004\n\u0013\u0007Neustar1\u000B0\t\u0006\u0003U\u0004\u000B\u0013\u0002QA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1\u00110\u000F\u0006\u0003U\u0004\b\u0013\bVirginia1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00160\u0014\u0006\u0003U\u0004\u0003\u0013\rneustar.qa.ca0\u001E\u0017\r150423050332Z\u0017\r200421050332Z0z1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u000B0\t\u0006\u0003U\u0004\b\u0013\u0002VA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1+0)\u0006\u0003U\u0004\u0003\u0013\"urn:dece:org:org:dece:org1Retailer1\u001E0\u001C\u0006\t*�H��\r\u0001\t\u0001\u0016\u000Ffoo@neustar.com0�\u0001\"0\r\u0006\t*�H��\r\u0001\u0001\u0001\u0005\u0000\u0003�\u0001\u000F\u00000�\u0001\n\u0002�\u0001\u0001\u0000��a�b�������Ix4!�b��e\u0017�F��Y�\u000F��\u0004.%&���&K�d��+i�\b7Xx��\u001C�\u001A\u000BΧa\u0019�\u0012'\u0004�)\u0005\u001BI�Md�]]>&#x7f;<![CDATA[�Y\t�Z����8��\u001F;�\u0010�&�\u000E\u001BH&IAeyd\u001Bk1\u0013\u001FXW����(S�Af�\u0017��۠\\Q�1@�m<K���K�UF�\u001A��ˆ�\u000B\t7�n��#�]]>&#x84;<![CDATA[\u0007�_k����{#\u0011��?\n\u000F�|�\u0017��:�\u0015oT�~\u0013���8�,�*�\u0004�@F<:L��@�s�g\u0006�;P^*�U'u�+�9\u000E`tq_:���\u0014���GuP��:&\u0001��I\u0002\u0003\u0001\u0000\u00010\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u0000\u0003��\u0000\u0001�[q`:ikdoS����(��s������x�u\u001F��\u0006��.\u001DG�Q���U\u001C޴\u0004H���W��\u0000\u0010b�騚�द�;�O�=�%\u001Cʓ���%��-P!#���x�D8��\u000B�J�Ww�}\u00103r{��\u0000HV�E���XhD<�\u0012\u0013�\u000Ey8E��|���M\u001B~T�F\u0011��V�\u001Dd\r\n--Boundary_1_1217803181_1452301422319\r\nContent-Type: application/octet-stream\r\nContent-Disposition: form-data; name=\"file2\"\r\n\r\n����\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u000Bsamplealias\u0000\u0000\u0001O�\u0002��\u0000\u0000\u0005\u00000�\u0004�0\u000E\u0006\n+\u0006\u0001\u0004\u0001*\u0002\u0011\u0001\u0001\u0005\u0000\u0004�\u0004�����\u0018U\b\u001C���o\u00010��=z��!�9h�ܪ\u0018�5���\u001D�]]>&#x9d;<![CDATA[��g�s\t&�!@!\u001Fh]]>&#x7f;<![CDATA[\"z�A�ܧ'�Q��˾��\u0006�\u0007|�]?v4\u0012&\u000E5:Gs;����\\\u0002i;��!a$����=X_\u001C��Ǧ|_A����S��\t�XO?�ۂ5z�\u000B%��Y��]�>j�J.��v^�Ͷ�n�\u0012��E�3=�`���\u000BZ}mf�\u0011e\u0001��1��\u0006�o)���������L\u001AL�1���8\u001D��<\u0006�ӗjz�h7*K��\u001F���S�$\u0014,+6L1\u0014] F���6��\u000E\u001B�qG'\\\b�\u0010�#5h��G�0�@��c�\u0002p�!\u001ES�w�\"f\u0019@�c�̃b\u0014�U��@��\u000E���-��m\u001B�@�L����%6�X�ģ�[�\n'!�j���\u000BR]]>&#x7f;<![CDATA[Q��p\u0019X���]\f��i���z!ޑ�\u0003�\u001F$����j.�}\u0013\u0007E�%�\"җaБ{j�������1�?K������\u001A�\u0016�\u0018�����\u001FW�m\u001C�ݴ�\f�Lָ#\u000B�\u0015\u0000E]]>&#x7f;<![CDATA[jy������*\f��\u0005\u0016���_�@`�s�9�\\��u�[ϟvh�\\�\n-B:���h�q�`b6�����8?0���=�[�\ffG]��\u0000�C\u0014�A0*ל�\u0011p�DsC��A63j���p\u0003�\u0001�\u0005��V�� *��D��q� ��d�\u0003�ZN�s\u0019���D�76>a�\u000B�\"�\u0018d�@��\u0005\u0003��pAf��\u0003\u0011�{\u001E\u001Cd��\u0006&���D]]>&#x7f;<![CDATA[\u001AU\u0010>]\u000E[��S�u\\C��<!�\u001B�.�`\fǵd�.\u001B\\\u000F5]]>&#x7f;<![CDATA[iD@�F~��\b�ǹ��'��A1�uP�^�V��-U��\u001C\u0003��c)�4��$�'��\u000F���'��rI�Q\\,\b$�2�vՑ2�\t#NU�W)'w��\t,m6a:�d�\u0001t��5��O���3^巠Ҳ\u0006���\u001B��&q\u00037\u00134�А��\\\u0006[\fb\u001AL�r(�H0�Suv~\n[-1��\u0012�x�`0\n�>v�΍d~e�M�ޖn�f� ^\f\u00119\u000F\f���Zߐ$�ݵ�ٖDeB�]]>&#x7f;<![CDATA[��a�3�&�;tQ\u0017�|7m?&`U�P\u0000�w\u0003\u0015��emjI�x�/#�4�~\u0015�\u0018����V�\u0004��\u0006{�0$\u001A�/D�X3^�z��c�i]�\u0015�\\Kr<(\u0006���f�?�`\u0013Q}\u0006\u0015!�\u001E]����\u000B�\u0019≇Qt\u0006A��I�I>$��FΑ��ưq\u001E�;D���[\u000F9�\u0006\u0001\u001AF�r�q��3r{lI��E�+���d�%\u0001X���\u001B\u0002�e\f0�\u000E�R\u001B�t�H%��~���#p��ό��\u0005ɏYŢ��zzi����9��^��<��\u0018�|Mu��'0�'DԪe{��R�^\u0003�h\u0004X�L�.�ۤ>B\u0006�`܎�ρy���\u0017\u0006\u0017�r�@��\u001Dä\u001A���t��-ﴃ�^�\u001Eh��H?���`U\u001EE��+E��\u001Bِ\u0010�qy�Ҝi�Z��Jp6V㓎��\u0004����d�����\u0002}�-^�\u001F8�Ȑ�W�����8��X����)\u00106�\fr�\u000E\b�\u0006�\u0000\u0000\u0000\u0001\u0000\u0005X.509\u0000\u0000\u0002�0�\u0002�0�\u0002A\u0002\u0002\u0006\"0\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u00000j1\u00100\u000E\u0006\u0003U\u0004\n\u0013\u0007Neustar1\u000B0\t\u0006\u0003U\u0004\u000B\u0013\u0002QA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1\u00110\u000F\u0006\u0003U\u0004\b\u0013\bVirginia1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00160\u0014\u0006\u0003U\u0004\u0003\u0013\rneustar.qa.ca0\u001E\u0017\r150423050332Z\u0017\r200421050332Z0z1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u000B0\t\u0006\u0003U\u0004\b\u0013\u0002VA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1+0)\u0006\u0003U\u0004\u0003\u0013\"urn:dece:org:org:dece:org1Retailer1\u001E0\u001C\u0006\t*�H��\r\u0001\t\u0001\u0016\u000Ffoo@neustar.com0�\u0001\"0\r\u0006\t*�H��\r\u0001\u0001\u0001\u0005\u0000\u0003�\u0001\u000F\u00000�\u0001\n\u0002�\u0001\u0001\u0000��a�b�������Ix4!�b��e\u0017�F��Y�\u000F��\u0004.%&���&K�d��+i�\b7Xx��\u001C�\u001A\u000BΧa\u0019�\u0012'\u0004�)\u0005\u001BI�Md�]]>&#x7f;<![CDATA[�Y\t�Z����8��\u001F;�\u0010�&�\u000E\u001BH&IAeyd\u001Bk1\u0013\u001FXW����(S�Af�\u0017��۠\\Q�1@�m<K���K�UF�\u001A��ˆ�\u000B\t7�n��#�]]>&#x84;<![CDATA[\u0007�_k����{#\u0011��?\n\u000F�|�\u0017��:�\u0015oT�~\u0013���8�,�*�\u0004�@F<:L��@�s�g\u0006�;P^*�U'u�+�9\u000E`tq_:���\u0014���GuP��:&\u0001��I\u0002\u0003\u0001\u0000\u00010\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u0000\u0003��\u0000\u0001�[q`:ikdoS����(��s������x�u\u001F��\u0006��.\u001DG�Q���U\u001C޴\u0004H���W��\u0000\u0010b�騚�द�;�O�=�%\u001Cʓ���%��-P!#���x�D8��\u000B�J�Ww�}\u00103r{��\u0000HV�E���XhD<�\u0012\u0013�\u000Ey8E��|���M\u001B~T�F\u0011��V�\u001Dd\r\n--Boundary_1_1217803181_1452301422319--\r\n"
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "multipart/form-data;boundary=Boundary_1_1217803181_1452301422319" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "MIME-Version",
+	    "values" : [ "1.0" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "4475" ]
+	  } ],
+	  "body" : "--Boundary_1_1217803181_1452301422319\r\nContent-Type: application/octet-stream\r\nContent-Disposition: form-data; name=\"file1\"\r\n\r\n����\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u000Bsamplealias\u0000\u0000\u0001O�\u0002��\u0000\u0000\u0005\u00000�\u0004�0\u000E\u0006\n+\u0006\u0001\u0004\u0001*\u0002\u0011\u0001\u0001\u0005\u0000\u0004�\u0004�����\u0018U\b\u001C���o\u00010��=z��!�9h�ܪ\u0018�5���\u001D�]]>&#x9d;<![CDATA[��g�s\t&�!@!\u001Fh]]>&#x7f;<![CDATA[\"z�A�ܧ'�Q��˾��\u0006�\u0007|�]?v4\u0012&\u000E5:Gs;����\\\u0002i;��!a$����=X_\u001C��Ǧ|_A����S��\t�XO?�ۂ5z�\u000B%��Y��]�>j�J.��v^�Ͷ�n�\u0012��E�3=�`���\u000BZ}mf�\u0011e\u0001��1��\u0006�o)���������L\u001AL�1���8\u001D��<\u0006�ӗjz�h7*K��\u001F���S�$\u0014,+6L1\u0014] F���6��\u000E\u001B�qG'\\\b�\u0010�#5h��G�0�@��c�\u0002p�!\u001ES�w�\"f\u0019@�c�̃b\u0014�U��@��\u000E���-��m\u001B�@�L����%6�X�ģ�[�\n'!�j���\u000BR]]>&#x7f;<![CDATA[Q��p\u0019X���]\f��i���z!ޑ�\u0003�\u001F$����j.�}\u0013\u0007E�%�\"җaБ{j�������1�?K������\u001A�\u0016�\u0018�����\u001FW�m\u001C�ݴ�\f�Lָ#\u000B�\u0015\u0000E]]>&#x7f;<![CDATA[jy������*\f��\u0005\u0016���_�@`�s�9�\\��u�[ϟvh�\\�\n-B:���h�q�`b6�����8?0���=�[�\ffG]��\u0000�C\u0014�A0*ל�\u0011p�DsC��A63j���p\u0003�\u0001�\u0005��V�� *��D��q� ��d�\u0003�ZN�s\u0019���D�76>a�\u000B�\"�\u0018d�@��\u0005\u0003��pAf��\u0003\u0011�{\u001E\u001Cd��\u0006&���D]]>&#x7f;<![CDATA[\u001AU\u0010>]\u000E[��S�u\\C��<!�\u001B�.�`\fǵd�.\u001B\\\u000F5]]>&#x7f;<![CDATA[iD@�F~��\b�ǹ��'��A1�uP�^�V��-U��\u001C\u0003��c)�4��$�'��\u000F���'��rI�Q\\,\b$�2�vՑ2�\t#NU�W)'w��\t,m6a:�d�\u0001t��5��O���3^巠Ҳ\u0006���\u001B��&q\u00037\u00134�А��\\\u0006[\fb\u001AL�r(�H0�Suv~\n[-1��\u0012�x�`0\n�>v�΍d~e�M�ޖn�f� ^\f\u00119\u000F\f���Zߐ$�ݵ�ٖDeB�]]>&#x7f;<![CDATA[��a�3�&�;tQ\u0017�|7m?&`U�P\u0000�w\u0003\u0015��emjI�x�/#�4�~\u0015�\u0018����V�\u0004��\u0006{�0$\u001A�/D�X3^�z��c�i]�\u0015�\\Kr<(\u0006���f�?�`\u0013Q}\u0006\u0015!�\u001E]����\u000B�\u0019≇Qt\u0006A��I�I>$��FΑ��ưq\u001E�;D���[\u000F9�\u0006\u0001\u001AF�r�q��3r{lI��E�+���d�%\u0001X���\u001B\u0002�e\f0�\u000E�R\u001B�t�H%��~���#p��ό��\u0005ɏYŢ��zzi����9��^��<��\u0018�|Mu��'0�'DԪe{��R�^\u0003�h\u0004X�L�.�ۤ>B\u0006�`܎�ρy���\u0017\u0006\u0017�r�@��\u001Dä\u001A���t��-ﴃ�^�\u001Eh��H?���`U\u001EE��+E��\u001Bِ\u0010�qy�Ҝi�Z��Jp6V㓎��\u0004����d�����\u0002}�-^�\u001F8�Ȑ�W�����8��X����)\u00106�\fr�\u000E\b�\u0006�\u0000\u0000\u0000\u0001\u0000\u0005X.509\u0000\u0000\u0002�0�\u0002�0�\u0002A\u0002\u0002\u0006\"0\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u00000j1\u00100\u000E\u0006\u0003U\u0004\n\u0013\u0007Neustar1\u000B0\t\u0006\u0003U\u0004\u000B\u0013\u0002QA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1\u00110\u000F\u0006\u0003U\u0004\b\u0013\bVirginia1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00160\u0014\u0006\u0003U\u0004\u0003\u0013\rneustar.qa.ca0\u001E\u0017\r150423050332Z\u0017\r200421050332Z0z1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u000B0\t\u0006\u0003U\u0004\b\u0013\u0002VA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1+0)\u0006\u0003U\u0004\u0003\u0013\"urn:dece:org:org:dece:org1Retailer1\u001E0\u001C\u0006\t*�H��\r\u0001\t\u0001\u0016\u000Ffoo@neustar.com0�\u0001\"0\r\u0006\t*�H��\r\u0001\u0001\u0001\u0005\u0000\u0003�\u0001\u000F\u00000�\u0001\n\u0002�\u0001\u0001\u0000��a�b�������Ix4!�b��e\u0017�F��Y�\u000F��\u0004.%&���&K�d��+i�\b7Xx��\u001C�\u001A\u000BΧa\u0019�\u0012'\u0004�)\u0005\u001BI�Md�]]>&#x7f;<![CDATA[�Y\t�Z����8��\u001F;�\u0010�&�\u000E\u001BH&IAeyd\u001Bk1\u0013\u001FXW����(S�Af�\u0017��۠\\Q�1@�m<K���K�UF�\u001A��ˆ�\u000B\t7�n��#�]]>&#x84;<![CDATA[\u0007�_k����{#\u0011��?\n\u000F�|�\u0017��:�\u0015oT�~\u0013���8�,�*�\u0004�@F<:L��@�s�g\u0006�;P^*�U'u�+�9\u000E`tq_:���\u0014���GuP��:&\u0001��I\u0002\u0003\u0001\u0000\u00010\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u0000\u0003��\u0000\u0001�[q`:ikdoS����(��s������x�u\u001F��\u0006��.\u001DG�Q���U\u001C޴\u0004H���W��\u0000\u0010b�騚�द�;�O�=�%\u001Cʓ���%��-P!#���x�D8��\u000B�J�Ww�}\u00103r{��\u0000HV�E���XhD<�\u0012\u0013�\u000Ey8E��|���M\u001B~T�F\u0011��V�\u001Dd\r\n--Boundary_1_1217803181_1452301422319\r\nContent-Type: application/octet-stream\r\nContent-Disposition: form-data; name=\"file2\"\r\n\r\n����\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u000Bsamplealias\u0000\u0000\u0001O�\u0002��\u0000\u0000\u0005\u00000�\u0004�0\u000E\u0006\n+\u0006\u0001\u0004\u0001*\u0002\u0011\u0001\u0001\u0005\u0000\u0004�\u0004�����\u0018U\b\u001C���o\u00010��=z��!�9h�ܪ\u0018�5���\u001D�]]>&#x9d;<![CDATA[��g�s\t&�!@!\u001Fh]]>&#x7f;<![CDATA[\"z�A�ܧ'�Q��˾��\u0006�\u0007|�]?v4\u0012&\u000E5:Gs;����\\\u0002i;��!a$����=X_\u001C��Ǧ|_A����S��\t�XO?�ۂ5z�\u000B%��Y��]�>j�J.��v^�Ͷ�n�\u0012��E�3=�`���\u000BZ}mf�\u0011e\u0001��1��\u0006�o)���������L\u001AL�1���8\u001D��<\u0006�ӗjz�h7*K��\u001F���S�$\u0014,+6L1\u0014] F���6��\u000E\u001B�qG'\\\b�\u0010�#5h��G�0�@��c�\u0002p�!\u001ES�w�\"f\u0019@�c�̃b\u0014�U��@��\u000E���-��m\u001B�@�L����%6�X�ģ�[�\n'!�j���\u000BR]]>&#x7f;<![CDATA[Q��p\u0019X���]\f��i���z!ޑ�\u0003�\u001F$����j.�}\u0013\u0007E�%�\"җaБ{j�������1�?K������\u001A�\u0016�\u0018�����\u001FW�m\u001C�ݴ�\f�Lָ#\u000B�\u0015\u0000E]]>&#x7f;<![CDATA[jy������*\f��\u0005\u0016���_�@`�s�9�\\��u�[ϟvh�\\�\n-B:���h�q�`b6�����8?0���=�[�\ffG]��\u0000�C\u0014�A0*ל�\u0011p�DsC��A63j���p\u0003�\u0001�\u0005��V�� *��D��q� ��d�\u0003�ZN�s\u0019���D�76>a�\u000B�\"�\u0018d�@��\u0005\u0003��pAf��\u0003\u0011�{\u001E\u001Cd��\u0006&���D]]>&#x7f;<![CDATA[\u001AU\u0010>]\u000E[��S�u\\C��<!�\u001B�.�`\fǵd�.\u001B\\\u000F5]]>&#x7f;<![CDATA[iD@�F~��\b�ǹ��'��A1�uP�^�V��-U��\u001C\u0003��c)�4��$�'��\u000F���'��rI�Q\\,\b$�2�vՑ2�\t#NU�W)'w��\t,m6a:�d�\u0001t��5��O���3^巠Ҳ\u0006���\u001B��&q\u00037\u00134�А��\\\u0006[\fb\u001AL�r(�H0�Suv~\n[-1��\u0012�x�`0\n�>v�΍d~e�M�ޖn�f� ^\f\u00119\u000F\f���Zߐ$�ݵ�ٖDeB�]]>&#x7f;<![CDATA[��a�3�&�;tQ\u0017�|7m?&`U�P\u0000�w\u0003\u0015��emjI�x�/#�4�~\u0015�\u0018����V�\u0004��\u0006{�0$\u001A�/D�X3^�z��c�i]�\u0015�\\Kr<(\u0006���f�?�`\u0013Q}\u0006\u0015!�\u001E]����\u000B�\u0019≇Qt\u0006A��I�I>$��FΑ��ưq\u001E�;D���[\u000F9�\u0006\u0001\u001AF�r�q��3r{lI��E�+���d�%\u0001X���\u001B\u0002�e\f0�\u000E�R\u001B�t�H%��~���#p��ό��\u0005ɏYŢ��zzi����9��^��<��\u0018�|Mu��'0�'DԪe{��R�^\u0003�h\u0004X�L�.�ۤ>B\u0006�`܎�ρy���\u0017\u0006\u0017�r�@��\u001Dä\u001A���t��-ﴃ�^�\u001Eh��H?���`U\u001EE��+E��\u001Bِ\u0010�qy�Ҝi�Z��Jp6V㓎��\u0004����d�����\u0002}�-^�\u001F8�Ȑ�W�����8��X����)\u00106�\fr�\u000E\b�\u0006�\u0000\u0000\u0000\u0001\u0000\u0005X.509\u0000\u0000\u0002�0�\u0002�0�\u0002A\u0002\u0002\u0006\"0\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u00000j1\u00100\u000E\u0006\u0003U\u0004\n\u0013\u0007Neustar1\u000B0\t\u0006\u0003U\u0004\u000B\u0013\u0002QA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1\u00110\u000F\u0006\u0003U\u0004\b\u0013\bVirginia1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00160\u0014\u0006\u0003U\u0004\u0003\u0013\rneustar.qa.ca0\u001E\u0017\r150423050332Z\u0017\r200421050332Z0z1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u000B0\t\u0006\u0003U\u0004\b\u0013\u0002VA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1+0)\u0006\u0003U\u0004\u0003\u0013\"urn:dece:org:org:dece:org1Retailer1\u001E0\u001C\u0006\t*�H��\r\u0001\t\u0001\u0016\u000Ffoo@neustar.com0�\u0001\"0\r\u0006\t*�H��\r\u0001\u0001\u0001\u0005\u0000\u0003�\u0001\u000F\u00000�\u0001\n\u0002�\u0001\u0001\u0000��a�b�������Ix4!�b��e\u0017�F��Y�\u000F��\u0004.%&���&K�d��+i�\b7Xx��\u001C�\u001A\u000BΧa\u0019�\u0012'\u0004�)\u0005\u001BI�Md�]]>&#x7f;<![CDATA[�Y\t�Z����8��\u001F;�\u0010�&�\u000E\u001BH&IAeyd\u001Bk1\u0013\u001FXW����(S�Af�\u0017��۠\\Q�1@�m<K���K�UF�\u001A��ˆ�\u000B\t7�n��#�]]>&#x84;<![CDATA[\u0007�_k����{#\u0011��?\n\u000F�|�\u0017��:�\u0015oT�~\u0013���8�,�*�\u0004�@F<:L��@�s�g\u0006�;P^*�U'u�+�9\u000E`tq_:���\u0014���GuP��:&\u0001��I\u0002\u0003\u0001\u0000\u00010\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u0000\u0003��\u0000\u0001�[q`:ikdoS����(��s������x�u\u001F��\u0006��.\u001DG�Q���U\u001C޴\u0004H���W��\u0000\u0010b�騚�द�;�O�=�%\u001Cʓ���%��-P!#���x�D8��\u000B�J�Ww�}\u00103r{��\u0000HV�E���XhD<�\u0012\u0013�\u000Ey8E��|���M\u001B~T�F\u0011��V�\u001Dd\r\n--Boundary_1_1217803181_1452301422319--\r\n"
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "multipart/form-data;boundary=Boundary_1_1217803181_1452301422319" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "MIME-Version",
+	    "values" : [ "1.0" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "4475" ]
+	  } ],
+	  "body" : "--Boundary_1_1217803181_1452301422319\r\nContent-Type: application/octet-stream\r\nContent-Disposition: form-data; name=\"file1\"\r\n\r\n����\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u000Bsamplealias\u0000\u0000\u0001O�\u0002��\u0000\u0000\u0005\u00000�\u0004�0\u000E\u0006\n+\u0006\u0001\u0004\u0001*\u0002\u0011\u0001\u0001\u0005\u0000\u0004�\u0004�����\u0018U\b\u001C���o\u00010��=z��!�9h�ܪ\u0018�5���\u001D�]]>&#x9d;<![CDATA[��g�s\t&�!@!\u001Fh]]>&#x7f;<![CDATA[\"z�A�ܧ'�Q��˾��\u0006�\u0007|�]?v4\u0012&\u000E5:Gs;����\\\u0002i;��!a$����=X_\u001C��Ǧ|_A����S��\t�XO?�ۂ5z�\u000B%��Y��]�>j�J.��v^�Ͷ�n�\u0012��E�3=�`���\u000BZ}mf�\u0011e\u0001��1��\u0006�o)���������L\u001AL�1���8\u001D��<\u0006�ӗjz�h7*K��\u001F���S�$\u0014,+6L1\u0014] F���6��\u000E\u001B�qG'\\\b�\u0010�#5h��G�0�@��c�\u0002p�!\u001ES�w�\"f\u0019@�c�̃b\u0014�U��@��\u000E���-��m\u001B�@�L����%6�X�ģ�[�\n'!�j���\u000BR]]>&#x7f;<![CDATA[Q��p\u0019X���]\f��i���z!ޑ�\u0003�\u001F$����j.�}\u0013\u0007E�%�\"җaБ{j�������1�?K������\u001A�\u0016�\u0018�����\u001FW�m\u001C�ݴ�\f�Lָ#\u000B�\u0015\u0000E]]>&#x7f;<![CDATA[jy������*\f��\u0005\u0016���_�@`�s�9�\\��u�[ϟvh�\\�\n-B:���h�q�`b6�����8?0���=�[�\ffG]��\u0000�C\u0014�A0*ל�\u0011p�DsC��A63j���p\u0003�\u0001�\u0005��V�� *��D��q� ��d�\u0003�ZN�s\u0019���D�76>a�\u000B�\"�\u0018d�@��\u0005\u0003��pAf��\u0003\u0011�{\u001E\u001Cd��\u0006&���D]]>&#x7f;<![CDATA[\u001AU\u0010>]\u000E[��S�u\\C��<!�\u001B�.�`\fǵd�.\u001B\\\u000F5]]>&#x7f;<![CDATA[iD@�F~��\b�ǹ��'��A1�uP�^�V��-U��\u001C\u0003��c)�4��$�'��\u000F���'��rI�Q\\,\b$�2�vՑ2�\t#NU�W)'w��\t,m6a:�d�\u0001t��5��O���3^巠Ҳ\u0006���\u001B��&q\u00037\u00134�А��\\\u0006[\fb\u001AL�r(�H0�Suv~\n[-1��\u0012�x�`0\n�>v�΍d~e�M�ޖn�f� ^\f\u00119\u000F\f���Zߐ$�ݵ�ٖDeB�]]>&#x7f;<![CDATA[��a�3�&�;tQ\u0017�|7m?&`U�P\u0000�w\u0003\u0015��emjI�x�/#�4�~\u0015�\u0018����V�\u0004��\u0006{�0$\u001A�/D�X3^�z��c�i]�\u0015�\\Kr<(\u0006���f�?�`\u0013Q}\u0006\u0015!�\u001E]����\u000B�\u0019≇Qt\u0006A��I�I>$��FΑ��ưq\u001E�;D���[\u000F9�\u0006\u0001\u001AF�r�q��3r{lI��E�+���d�%\u0001X���\u001B\u0002�e\f0�\u000E�R\u001B�t�H%��~���#p��ό��\u0005ɏYŢ��zzi����9��^��<��\u0018�|Mu��'0�'DԪe{��R�^\u0003�h\u0004X�L�.�ۤ>B\u0006�`܎�ρy���\u0017\u0006\u0017�r�@��\u001Dä\u001A���t��-ﴃ�^�\u001Eh��H?���`U\u001EE��+E��\u001Bِ\u0010�qy�Ҝi�Z��Jp6V㓎��\u0004����d�����\u0002}�-^�\u001F8�Ȑ�W�����8��X����)\u00106�\fr�\u000E\b�\u0006�\u0000\u0000\u0000\u0001\u0000\u0005X.509\u0000\u0000\u0002�0�\u0002�0�\u0002A\u0002\u0002\u0006\"0\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u00000j1\u00100\u000E\u0006\u0003U\u0004\n\u0013\u0007Neustar1\u000B0\t\u0006\u0003U\u0004\u000B\u0013\u0002QA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1\u00110\u000F\u0006\u0003U\u0004\b\u0013\bVirginia1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00160\u0014\u0006\u0003U\u0004\u0003\u0013\rneustar.qa.ca0\u001E\u0017\r150423050332Z\u0017\r200421050332Z0z1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u000B0\t\u0006\u0003U\u0004\b\u0013\u0002VA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1+0)\u0006\u0003U\u0004\u0003\u0013\"urn:dece:org:org:dece:org1Retailer1\u001E0\u001C\u0006\t*�H��\r\u0001\t\u0001\u0016\u000Ffoo@neustar.com0�\u0001\"0\r\u0006\t*�H��\r\u0001\u0001\u0001\u0005\u0000\u0003�\u0001\u000F\u00000�\u0001\n\u0002�\u0001\u0001\u0000��a�b�������Ix4!�b��e\u0017�F��Y�\u000F��\u0004.%&���&K�d��+i�\b7Xx��\u001C�\u001A\u000BΧa\u0019�\u0012'\u0004�)\u0005\u001BI�Md�]]>&#x7f;<![CDATA[�Y\t�Z����8��\u001F;�\u0010�&�\u000E\u001BH&IAeyd\u001Bk1\u0013\u001FXW����(S�Af�\u0017��۠\\Q�1@�m<K���K�UF�\u001A��ˆ�\u000B\t7�n��#�]]>&#x84;<![CDATA[\u0007�_k����{#\u0011��?\n\u000F�|�\u0017��:�\u0015oT�~\u0013���8�,�*�\u0004�@F<:L��@�s�g\u0006�;P^*�U'u�+�9\u000E`tq_:���\u0014���GuP��:&\u0001��I\u0002\u0003\u0001\u0000\u00010\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u0000\u0003��\u0000\u0001�[q`:ikdoS����(��s������x�u\u001F��\u0006��.\u001DG�Q���U\u001C޴\u0004H���W��\u0000\u0010b�騚�द�;�O�=�%\u001Cʓ���%��-P!#���x�D8��\u000B�J�Ww�}\u00103r{��\u0000HV�E���XhD<�\u0012\u0013�\u000Ey8E��|���M\u001B~T�F\u0011��V�\u001Dd\r\n--Boundary_1_1217803181_1452301422319\r\nContent-Type: application/octet-stream\r\nContent-Disposition: form-data; name=\"file2\"\r\n\r\n����\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u000Bsamplealias\u0000\u0000\u0001O�\u0002��\u0000\u0000\u0005\u00000�\u0004�0\u000E\u0006\n+\u0006\u0001\u0004\u0001*\u0002\u0011\u0001\u0001\u0005\u0000\u0004�\u0004�����\u0018U\b\u001C���o\u00010��=z��!�9h�ܪ\u0018�5���\u001D�]]>&#x9d;<![CDATA[��g�s\t&�!@!\u001Fh]]>&#x7f;<![CDATA[\"z�A�ܧ'�Q��˾��\u0006�\u0007|�]?v4\u0012&\u000E5:Gs;����\\\u0002i;��!a$����=X_\u001C��Ǧ|_A����S��\t�XO?�ۂ5z�\u000B%��Y��]�>j�J.��v^�Ͷ�n�\u0012��E�3=�`���\u000BZ}mf�\u0011e\u0001��1��\u0006�o)���������L\u001AL�1���8\u001D��<\u0006�ӗjz�h7*K��\u001F���S�$\u0014,+6L1\u0014] F���6��\u000E\u001B�qG'\\\b�\u0010�#5h��G�0�@��c�\u0002p�!\u001ES�w�\"f\u0019@�c�̃b\u0014�U��@��\u000E���-��m\u001B�@�L����%6�X�ģ�[�\n'!�j���\u000BR]]>&#x7f;<![CDATA[Q��p\u0019X���]\f��i���z!ޑ�\u0003�\u001F$����j.�}\u0013\u0007E�%�\"җaБ{j�������1�?K������\u001A�\u0016�\u0018�����\u001FW�m\u001C�ݴ�\f�Lָ#\u000B�\u0015\u0000E]]>&#x7f;<![CDATA[jy������*\f��\u0005\u0016���_�@`�s�9�\\��u�[ϟvh�\\�\n-B:���h�q�`b6�����8?0���=�[�\ffG]��\u0000�C\u0014�A0*ל�\u0011p�DsC��A63j���p\u0003�\u0001�\u0005��V�� *��D��q� ��d�\u0003�ZN�s\u0019���D�76>a�\u000B�\"�\u0018d�@��\u0005\u0003��pAf��\u0003\u0011�{\u001E\u001Cd��\u0006&���D]]>&#x7f;<![CDATA[\u001AU\u0010>]\u000E[��S�u\\C��<!�\u001B�.�`\fǵd�.\u001B\\\u000F5]]>&#x7f;<![CDATA[iD@�F~��\b�ǹ��'��A1�uP�^�V��-U��\u001C\u0003��c)�4��$�'��\u000F���'��rI�Q\\,\b$�2�vՑ2�\t#NU�W)'w��\t,m6a:�d�\u0001t��5��O���3^巠Ҳ\u0006���\u001B��&q\u00037\u00134�А��\\\u0006[\fb\u001AL�r(�H0�Suv~\n[-1��\u0012�x�`0\n�>v�΍d~e�M�ޖn�f� ^\f\u00119\u000F\f���Zߐ$�ݵ�ٖDeB�]]>&#x7f;<![CDATA[��a�3�&�;tQ\u0017�|7m?&`U�P\u0000�w\u0003\u0015��emjI�x�/#�4�~\u0015�\u0018����V�\u0004��\u0006{�0$\u001A�/D�X3^�z��c�i]�\u0015�\\Kr<(\u0006���f�?�`\u0013Q}\u0006\u0015!�\u001E]����\u000B�\u0019≇Qt\u0006A��I�I>$��FΑ��ưq\u001E�;D���[\u000F9�\u0006\u0001\u001AF�r�q��3r{lI��E�+���d�%\u0001X���\u001B\u0002�e\f0�\u000E�R\u001B�t�H%��~���#p��ό��\u0005ɏYŢ��zzi����9��^��<��\u0018�|Mu��'0�'DԪe{��R�^\u0003�h\u0004X�L�.�ۤ>B\u0006�`܎�ρy���\u0017\u0006\u0017�r�@��\u001Dä\u001A���t��-ﴃ�^�\u001Eh��H?���`U\u001EE��+E��\u001Bِ\u0010�qy�Ҝi�Z��Jp6V㓎��\u0004����d�����\u0002}�-^�\u001F8�Ȑ�W�����8��X����)\u00106�\fr�\u000E\b�\u0006�\u0000\u0000\u0000\u0001\u0000\u0005X.509\u0000\u0000\u0002�0�\u0002�0�\u0002A\u0002\u0002\u0006\"0\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u00000j1\u00100\u000E\u0006\u0003U\u0004\n\u0013\u0007Neustar1\u000B0\t\u0006\u0003U\u0004\u000B\u0013\u0002QA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1\u00110\u000F\u0006\u0003U\u0004\b\u0013\bVirginia1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00160\u0014\u0006\u0003U\u0004\u0003\u0013\rneustar.qa.ca0\u001E\u0017\r150423050332Z\u0017\r200421050332Z0z1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u000B0\t\u0006\u0003U\u0004\b\u0013\u0002VA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1+0)\u0006\u0003U\u0004\u0003\u0013\"urn:dece:org:org:dece:org1Retailer1\u001E0\u001C\u0006\t*�H��\r\u0001\t\u0001\u0016\u000Ffoo@neustar.com0�\u0001\"0\r\u0006\t*�H��\r\u0001\u0001\u0001\u0005\u0000\u0003�\u0001\u000F\u00000�\u0001\n\u0002�\u0001\u0001\u0000��a�b�������Ix4!�b��e\u0017�F��Y�\u000F��\u0004.%&���&K�d��+i�\b7Xx��\u001C�\u001A\u000BΧa\u0019�\u0012'\u0004�)\u0005\u001BI�Md�]]>&#x7f;<![CDATA[�Y\t�Z����8��\u001F;�\u0010�&�\u000E\u001BH&IAeyd\u001Bk1\u0013\u001FXW����(S�Af�\u0017��۠\\Q�1@�m<K���K�UF�\u001A��ˆ�\u000B\t7�n��#�]]>&#x84;<![CDATA[\u0007�_k����{#\u0011��?\n\u000F�|�\u0017��:�\u0015oT�~\u0013���8�,�*�\u0004�@F<:L��@�s�g\u0006�;P^*�U'u�+�9\u000E`tq_:���\u0014���GuP��:&\u0001��I\u0002\u0003\u0001\u0000\u00010\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u0000\u0003��\u0000\u0001�[q`:ikdoS����(��s������x�u\u001F��\u0006��.\u001DG�Q���U\u001C޴\u0004H���W��\u0000\u0010b�騚�द�;�O�=�%\u001Cʓ���%��-P!#���x�D8��\u000B�J�Ww�}\u00103r{��\u0000HV�E���XhD<�\u0012\u0013�\u000Ey8E��|���M\u001B~T�F\u0011��V�\u001Dd\r\n--Boundary_1_1217803181_1452301422319--\r\n"
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = true
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "multipart/form-data;boundary=Boundary_1_1217803181_1452301422319" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "MIME-Version",
+	    "values" : [ "1.0" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "4475" ]
+	  } ],
+	  "body" : "--Boundary_1_1217803181_1452301422319\r\nContent-Type: application/octet-stream\r\nContent-Disposition: form-data; name=\"file1\"\r\n\r\n����\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u000Bsamplealias\u0000\u0000\u0001O�\u0002��\u0000\u0000\u0005\u00000�\u0004�0\u000E\u0006\n+\u0006\u0001\u0004\u0001*\u0002\u0011\u0001\u0001\u0005\u0000\u0004�\u0004�����\u0018U\b\u001C���o\u00010��=z��!�9h�ܪ\u0018�5���\u001D�]]>&#x9d;<![CDATA[��g�s\t&�!@!\u001Fh]]>&#x7f;<![CDATA[\"z�A�ܧ'�Q��˾��\u0006�\u0007|�]?v4\u0012&\u000E5:Gs;����\\\u0002i;��!a$����=X_\u001C��Ǧ|_A����S��\t�XO?�ۂ5z�\u000B%��Y��]�>j�J.��v^�Ͷ�n�\u0012��E�3=�`���\u000BZ}mf�\u0011e\u0001��1��\u0006�o)���������L\u001AL�1���8\u001D��<\u0006�ӗjz�h7*K��\u001F���S�$\u0014,+6L1\u0014] F���6��\u000E\u001B�qG'\\\b�\u0010�#5h��G�0�@��c�\u0002p�!\u001ES�w�\"f\u0019@�c�̃b\u0014�U��@��\u000E���-��m\u001B�@�L����%6�X�ģ�[�\n'!�j���\u000BR]]>&#x7f;<![CDATA[Q��p\u0019X���]\f��i���z!ޑ�\u0003�\u001F$����j.�}\u0013\u0007E�%�\"җaБ{j�������1�?K������\u001A�\u0016�\u0018�����\u001FW�m\u001C�ݴ�\f�Lָ#\u000B�\u0015\u0000E]]>&#x7f;<![CDATA[jy������*\f��\u0005\u0016���_�@`�s�9�\\��u�[ϟvh�\\�\n-B:���h�q�`b6�����8?0���=�[�\ffG]��\u0000�C\u0014�A0*ל�\u0011p�DsC��A63j���p\u0003�\u0001�\u0005��V�� *��D��q� ��d�\u0003�ZN�s\u0019���D�76>a�\u000B�\"�\u0018d�@��\u0005\u0003��pAf��\u0003\u0011�{\u001E\u001Cd��\u0006&���D]]>&#x7f;<![CDATA[\u001AU\u0010>]\u000E[��S�u\\C��<!�\u001B�.�`\fǵd�.\u001B\\\u000F5]]>&#x7f;<![CDATA[iD@�F~��\b�ǹ��'��A1�uP�^�V��-U��\u001C\u0003��c)�4��$�'��\u000F���'��rI�Q\\,\b$�2�vՑ2�\t#NU�W)'w��\t,m6a:�d�\u0001t��5��O���3^巠Ҳ\u0006���\u001B��&q\u00037\u00134�А��\\\u0006[\fb\u001AL�r(�H0�Suv~\n[-1��\u0012�x�`0\n�>v�΍d~e�M�ޖn�f� ^\f\u00119\u000F\f���Zߐ$�ݵ�ٖDeB�]]>&#x7f;<![CDATA[��a�3�&�;tQ\u0017�|7m?&`U�P\u0000�w\u0003\u0015��emjI�x�/#�4�~\u0015�\u0018����V�\u0004��\u0006{�0$\u001A�/D�X3^�z��c�i]�\u0015�\\Kr<(\u0006���f�?�`\u0013Q}\u0006\u0015!�\u001E]����\u000B�\u0019≇Qt\u0006A��I�I>$��FΑ��ưq\u001E�;D���[\u000F9�\u0006\u0001\u001AF�r�q��3r{lI��E�+���d�%\u0001X���\u001B\u0002�e\f0�\u000E�R\u001B�t�H%��~���#p��ό��\u0005ɏYŢ��zzi����9��^��<��\u0018�|Mu��'0�'DԪe{��R�^\u0003�h\u0004X�L�.�ۤ>B\u0006�`܎�ρy���\u0017\u0006\u0017�r�@��\u001Dä\u001A���t��-ﴃ�^�\u001Eh��H?���`U\u001EE��+E��\u001Bِ\u0010�qy�Ҝi�Z��Jp6V㓎��\u0004����d�����\u0002}�-^�\u001F8�Ȑ�W�����8��X����)\u00106�\fr�\u000E\b�\u0006�\u0000\u0000\u0000\u0001\u0000\u0005X.509\u0000\u0000\u0002�0�\u0002�0�\u0002A\u0002\u0002\u0006\"0\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u00000j1\u00100\u000E\u0006\u0003U\u0004\n\u0013\u0007Neustar1\u000B0\t\u0006\u0003U\u0004\u000B\u0013\u0002QA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1\u00110\u000F\u0006\u0003U\u0004\b\u0013\bVirginia1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00160\u0014\u0006\u0003U\u0004\u0003\u0013\rneustar.qa.ca0\u001E\u0017\r150423050332Z\u0017\r200421050332Z0z1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u000B0\t\u0006\u0003U\u0004\b\u0013\u0002VA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1+0)\u0006\u0003U\u0004\u0003\u0013\"urn:dece:org:org:dece:org1Retailer1\u001E0\u001C\u0006\t*�H��\r\u0001\t\u0001\u0016\u000Ffoo@neustar.com0�\u0001\"0\r\u0006\t*�H��\r\u0001\u0001\u0001\u0005\u0000\u0003�\u0001\u000F\u00000�\u0001\n\u0002�\u0001\u0001\u0000��a�b�������Ix4!�b��e\u0017�F��Y�\u000F��\u0004.%&���&K�d��+i�\b7Xx��\u001C�\u001A\u000BΧa\u0019�\u0012'\u0004�)\u0005\u001BI�Md�]]>&#x7f;<![CDATA[�Y\t�Z����8��\u001F;�\u0010�&�\u000E\u001BH&IAeyd\u001Bk1\u0013\u001FXW����(S�Af�\u0017��۠\\Q�1@�m<K���K�UF�\u001A��ˆ�\u000B\t7�n��#�]]>&#x84;<![CDATA[\u0007�_k����{#\u0011��?\n\u000F�|�\u0017��:�\u0015oT�~\u0013���8�,�*�\u0004�@F<:L��@�s�g\u0006�;P^*�U'u�+�9\u000E`tq_:���\u0014���GuP��:&\u0001��I\u0002\u0003\u0001\u0000\u00010\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u0000\u0003��\u0000\u0001�[q`:ikdoS����(��s������x�u\u001F��\u0006��.\u001DG�Q���U\u001C޴\u0004H���W��\u0000\u0010b�騚�द�;�O�=�%\u001Cʓ���%��-P!#���x�D8��\u000B�J�Ww�}\u00103r{��\u0000HV�E���XhD<�\u0012\u0013�\u000Ey8E��|���M\u001B~T�F\u0011��V�\u001Dd\r\n--Boundary_1_1217803181_1452301422319\r\nContent-Type: application/octet-stream\r\nContent-Disposition: form-data; name=\"file2\"\r\n\r\n����\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u000Bsamplealias\u0000\u0000\u0001O�\u0002��\u0000\u0000\u0005\u00000�\u0004�0\u000E\u0006\n+\u0006\u0001\u0004\u0001*\u0002\u0011\u0001\u0001\u0005\u0000\u0004�\u0004�����\u0018U\b\u001C���o\u00010��=z��!�9h�ܪ\u0018�5���\u001D�]]>&#x9d;<![CDATA[��g�s\t&�!@!\u001Fh]]>&#x7f;<![CDATA[\"z�A�ܧ'�Q��˾��\u0006�\u0007|�]?v4\u0012&\u000E5:Gs;����\\\u0002i;��!a$����=X_\u001C��Ǧ|_A����S��\t�XO?�ۂ5z�\u000B%��Y��]�>j�J.��v^�Ͷ�n�\u0012��E�3=�`���\u000BZ}mf�\u0011e\u0001��1��\u0006�o)���������L\u001AL�1���8\u001D��<\u0006�ӗjz�h7*K��\u001F���S�$\u0014,+6L1\u0014] F���6��\u000E\u001B�qG'\\\b�\u0010�#5h��G�0�@��c�\u0002p�!\u001ES�w�\"f\u0019@�c�̃b\u0014�U��@��\u000E���-��m\u001B�@�L����%6�X�ģ�[�\n'!�j���\u000BR]]>&#x7f;<![CDATA[Q��p\u0019X���]\f��i���z!ޑ�\u0003�\u001F$����j.�}\u0013\u0007E�%�\"җaБ{j�������1�?K������\u001A�\u0016�\u0018�����\u001FW�m\u001C�ݴ�\f�Lָ#\u000B�\u0015\u0000E]]>&#x7f;<![CDATA[jy������*\f��\u0005\u0016���_�@`�s�9�\\��u�[ϟvh�\\�\n-B:���h�q�`b6�����8?0���=�[�\ffG]��\u0000�C\u0014�A0*ל�\u0011p�DsC��A63j���p\u0003�\u0001�\u0005��V�� *��D��q� ��d�\u0003�ZN�s\u0019���D�76>a�\u000B�\"�\u0018d�@��\u0005\u0003��pAf��\u0003\u0011�{\u001E\u001Cd��\u0006&���D]]>&#x7f;<![CDATA[\u001AU\u0010>]\u000E[��S�u\\C��<!�\u001B�.�`\fǵd�.\u001B\\\u000F5]]>&#x7f;<![CDATA[iD@�F~��\b�ǹ��'��A1�uP�^�V��-U��\u001C\u0003��c)�4��$�'��\u000F���'��rI�Q\\,\b$�2�vՑ2�\t#NU�W)'w��\t,m6a:�d�\u0001t��5��O���3^巠Ҳ\u0006���\u001B��&q\u00037\u00134�А��\\\u0006[\fb\u001AL�r(�H0�Suv~\n[-1��\u0012�x�`0\n�>v�΍d~e�M�ޖn�f� ^\f\u00119\u000F\f���Zߐ$�ݵ�ٖDeB�]]>&#x7f;<![CDATA[��a�3�&�;tQ\u0017�|7m?&`U�P\u0000�w\u0003\u0015��emjI�x�/#�4�~\u0015�\u0018����V�\u0004��\u0006{�0$\u001A�/D�X3^�z��c�i]�\u0015�\\Kr<(\u0006���f�?�`\u0013Q}\u0006\u0015!�\u001E]����\u000B�\u0019≇Qt\u0006A��I�I>$��FΑ��ưq\u001E�;D���[\u000F9�\u0006\u0001\u001AF�r�q��3r{lI��E�+���d�%\u0001X���\u001B\u0002�e\f0�\u000E�R\u001B�t�H%��~���#p��ό��\u0005ɏYŢ��zzi����9��^��<��\u0018�|Mu��'0�'DԪe{��R�^\u0003�h\u0004X�L�.�ۤ>B\u0006�`܎�ρy���\u0017\u0006\u0017�r�@��\u001Dä\u001A���t��-ﴃ�^�\u001Eh��H?���`U\u001EE��+E��\u001Bِ\u0010�qy�Ҝi�Z��Jp6V㓎��\u0004����d�����\u0002}�-^�\u001F8�Ȑ�W�����8��X����)\u00106�\fr�\u000E\b�\u0006�\u0000\u0000\u0000\u0001\u0000\u0005X.509\u0000\u0000\u0002�0�\u0002�0�\u0002A\u0002\u0002\u0006\"0\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u00000j1\u00100\u000E\u0006\u0003U\u0004\n\u0013\u0007Neustar1\u000B0\t\u0006\u0003U\u0004\u000B\u0013\u0002QA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1\u00110\u000F\u0006\u0003U\u0004\b\u0013\bVirginia1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00160\u0014\u0006\u0003U\u0004\u0003\u0013\rneustar.qa.ca0\u001E\u0017\r150423050332Z\u0017\r200421050332Z0z1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u000B0\t\u0006\u0003U\u0004\b\u0013\u0002VA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1+0)\u0006\u0003U\u0004\u0003\u0013\"urn:dece:org:org:dece:org1Retailer1\u001E0\u001C\u0006\t*�H��\r\u0001\t\u0001\u0016\u000Ffoo@neustar.com0�\u0001\"0\r\u0006\t*�H��\r\u0001\u0001\u0001\u0005\u0000\u0003�\u0001\u000F\u00000�\u0001\n\u0002�\u0001\u0001\u0000��a�b�������Ix4!�b��e\u0017�F��Y�\u000F��\u0004.%&���&K�d��+i�\b7Xx��\u001C�\u001A\u000BΧa\u0019�\u0012'\u0004�)\u0005\u001BI�Md�]]>&#x7f;<![CDATA[�Y\t�Z����8��\u001F;�\u0010�&�\u000E\u001BH&IAeyd\u001Bk1\u0013\u001FXW����(S�Af�\u0017��۠\\Q�1@�m<K���K�UF�\u001A��ˆ�\u000B\t7�n��#�]]>&#x84;<![CDATA[\u0007�_k����{#\u0011��?\n\u000F�|�\u0017��:�\u0015oT�~\u0013���8�,�*�\u0004�@F<:L��@�s�g\u0006�;P^*�U'u�+�9\u000E`tq_:���\u0014���GuP��:&\u0001��I\u0002\u0003\u0001\u0000\u00010\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u0000\u0003��\u0000\u0001�[q`:ikdoS����(��s������x�u\u001F��\u0006��.\u001DG�Q���U\u001C޴\u0004H���W��\u0000\u0010b�騚�द�;�O�=�%\u001Cʓ���%��-P!#���x�D8��\u000B�J�Ww�}\u00103r{��\u0000HV�E���XhD<�\u0012\u0013�\u000Ey8E��|���M\u001B~T�F\u0011��V�\u001Dd\r\n--Boundary_1_1217803181_1452301422319--\r\n"
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload"
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "statusCode" : 201,
+	  "headers" : [ {
+	    "name" : "Location",
+	    "values" : [ "https://www.mock-server.com" ]
+	  } ]
+	}
+
+ for request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "multipart/form-data;boundary=Boundary_1_1217803181_1452301422319" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "MIME-Version",
+	    "values" : [ "1.0" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "4475" ]
+	  } ],
+	  "body" : "--Boundary_1_1217803181_1452301422319\r\nContent-Type: application/octet-stream\r\nContent-Disposition: form-data; name=\"file1\"\r\n\r\n����\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u000Bsamplealias\u0000\u0000\u0001O�\u0002��\u0000\u0000\u0005\u00000�\u0004�0\u000E\u0006\n+\u0006\u0001\u0004\u0001*\u0002\u0011\u0001\u0001\u0005\u0000\u0004�\u0004�����\u0018U\b\u001C���o\u00010��=z��!�9h�ܪ\u0018�5���\u001D�]]>&#x9d;<![CDATA[��g�s\t&�!@!\u001Fh]]>&#x7f;<![CDATA[\"z�A�ܧ'�Q��˾��\u0006�\u0007|�]?v4\u0012&\u000E5:Gs;����\\\u0002i;��!a$����=X_\u001C��Ǧ|_A����S��\t�XO?�ۂ5z�\u000B%��Y��]�>j�J.��v^�Ͷ�n�\u0012��E�3=�`���\u000BZ}mf�\u0011e\u0001��1��\u0006�o)���������L\u001AL�1���8\u001D��<\u0006�ӗjz�h7*K��\u001F���S�$\u0014,+6L1\u0014] F���6��\u000E\u001B�qG'\\\b�\u0010�#5h��G�0�@��c�\u0002p�!\u001ES�w�\"f\u0019@�c�̃b\u0014�U��@��\u000E���-��m\u001B�@�L����%6�X�ģ�[�\n'!�j���\u000BR]]>&#x7f;<![CDATA[Q��p\u0019X���]\f��i���z!ޑ�\u0003�\u001F$����j.�}\u0013\u0007E�%�\"җaБ{j�������1�?K������\u001A�\u0016�\u0018�����\u001FW�m\u001C�ݴ�\f�Lָ#\u000B�\u0015\u0000E]]>&#x7f;<![CDATA[jy������*\f��\u0005\u0016���_�@`�s�9�\\��u�[ϟvh�\\�\n-B:���h�q�`b6�����8?0���=�[�\ffG]��\u0000�C\u0014�A0*ל�\u0011p�DsC��A63j���p\u0003�\u0001�\u0005��V�� *��D��q� ��d�\u0003�ZN�s\u0019���D�76>a�\u000B�\"�\u0018d�@��\u0005\u0003��pAf��\u0003\u0011�{\u001E\u001Cd��\u0006&���D]]>&#x7f;<![CDATA[\u001AU\u0010>]\u000E[��S�u\\C��<!�\u001B�.�`\fǵd�.\u001B\\\u000F5]]>&#x7f;<![CDATA[iD@�F~��\b�ǹ��'��A1�uP�^�V��-U��\u001C\u0003��c)�4��$�'��\u000F���'��rI�Q\\,\b$�2�vՑ2�\t#NU�W)'w��\t,m6a:�d�\u0001t��5��O���3^巠Ҳ\u0006���\u001B��&q\u00037\u00134�А��\\\u0006[\fb\u001AL�r(�H0�Suv~\n[-1��\u0012�x�`0\n�>v�΍d~e�M�ޖn�f� ^\f\u00119\u000F\f���Zߐ$�ݵ�ٖDeB�]]>&#x7f;<![CDATA[��a�3�&�;tQ\u0017�|7m?&`U�P\u0000�w\u0003\u0015��emjI�x�/#�4�~\u0015�\u0018����V�\u0004��\u0006{�0$\u001A�/D�X3^�z��c�i]�\u0015�\\Kr<(\u0006���f�?�`\u0013Q}\u0006\u0015!�\u001E]����\u000B�\u0019≇Qt\u0006A��I�I>$��FΑ��ưq\u001E�;D���[\u000F9�\u0006\u0001\u001AF�r�q��3r{lI��E�+���d�%\u0001X���\u001B\u0002�e\f0�\u000E�R\u001B�t�H%��~���#p��ό��\u0005ɏYŢ��zzi����9��^��<��\u0018�|Mu��'0�'DԪe{��R�^\u0003�h\u0004X�L�.�ۤ>B\u0006�`܎�ρy���\u0017\u0006\u0017�r�@��\u001Dä\u001A���t��-ﴃ�^�\u001Eh��H?���`U\u001EE��+E��\u001Bِ\u0010�qy�Ҝi�Z��Jp6V㓎��\u0004����d�����\u0002}�-^�\u001F8�Ȑ�W�����8��X����)\u00106�\fr�\u000E\b�\u0006�\u0000\u0000\u0000\u0001\u0000\u0005X.509\u0000\u0000\u0002�0�\u0002�0�\u0002A\u0002\u0002\u0006\"0\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u00000j1\u00100\u000E\u0006\u0003U\u0004\n\u0013\u0007Neustar1\u000B0\t\u0006\u0003U\u0004\u000B\u0013\u0002QA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1\u00110\u000F\u0006\u0003U\u0004\b\u0013\bVirginia1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00160\u0014\u0006\u0003U\u0004\u0003\u0013\rneustar.qa.ca0\u001E\u0017\r150423050332Z\u0017\r200421050332Z0z1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u000B0\t\u0006\u0003U\u0004\b\u0013\u0002VA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1+0)\u0006\u0003U\u0004\u0003\u0013\"urn:dece:org:org:dece:org1Retailer1\u001E0\u001C\u0006\t*�H��\r\u0001\t\u0001\u0016\u000Ffoo@neustar.com0�\u0001\"0\r\u0006\t*�H��\r\u0001\u0001\u0001\u0005\u0000\u0003�\u0001\u000F\u00000�\u0001\n\u0002�\u0001\u0001\u0000��a�b�������Ix4!�b��e\u0017�F��Y�\u000F��\u0004.%&���&K�d��+i�\b7Xx��\u001C�\u001A\u000BΧa\u0019�\u0012'\u0004�)\u0005\u001BI�Md�]]>&#x7f;<![CDATA[�Y\t�Z����8��\u001F;�\u0010�&�\u000E\u001BH&IAeyd\u001Bk1\u0013\u001FXW����(S�Af�\u0017��۠\\Q�1@�m<K���K�UF�\u001A��ˆ�\u000B\t7�n��#�]]>&#x84;<![CDATA[\u0007�_k����{#\u0011��?\n\u000F�|�\u0017��:�\u0015oT�~\u0013���8�,�*�\u0004�@F<:L��@�s�g\u0006�;P^*�U'u�+�9\u000E`tq_:���\u0014���GuP��:&\u0001��I\u0002\u0003\u0001\u0000\u00010\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u0000\u0003��\u0000\u0001�[q`:ikdoS����(��s������x�u\u001F��\u0006��.\u001DG�Q���U\u001C޴\u0004H���W��\u0000\u0010b�騚�द�;�O�=�%\u001Cʓ���%��-P!#���x�D8��\u000B�J�Ww�}\u00103r{��\u0000HV�E���XhD<�\u0012\u0013�\u000Ey8E��|���M\u001B~T�F\u0011��V�\u001Dd\r\n--Boundary_1_1217803181_1452301422319\r\nContent-Type: application/octet-stream\r\nContent-Disposition: form-data; name=\"file2\"\r\n\r\n����\u0000\u0000\u0000\u0002\u0000\u0000\u0000\u0001\u0000\u0000\u0000\u0001\u0000\u000Bsamplealias\u0000\u0000\u0001O�\u0002��\u0000\u0000\u0005\u00000�\u0004�0\u000E\u0006\n+\u0006\u0001\u0004\u0001*\u0002\u0011\u0001\u0001\u0005\u0000\u0004�\u0004�����\u0018U\b\u001C���o\u00010��=z��!�9h�ܪ\u0018�5���\u001D�]]>&#x9d;<![CDATA[��g�s\t&�!@!\u001Fh]]>&#x7f;<![CDATA[\"z�A�ܧ'�Q��˾��\u0006�\u0007|�]?v4\u0012&\u000E5:Gs;����\\\u0002i;��!a$����=X_\u001C��Ǧ|_A����S��\t�XO?�ۂ5z�\u000B%��Y��]�>j�J.��v^�Ͷ�n�\u0012��E�3=�`���\u000BZ}mf�\u0011e\u0001��1��\u0006�o)���������L\u001AL�1���8\u001D��<\u0006�ӗjz�h7*K��\u001F���S�$\u0014,+6L1\u0014] F���6��\u000E\u001B�qG'\\\b�\u0010�#5h��G�0�@��c�\u0002p�!\u001ES�w�\"f\u0019@�c�̃b\u0014�U��@��\u000E���-��m\u001B�@�L����%6�X�ģ�[�\n'!�j���\u000BR]]>&#x7f;<![CDATA[Q��p\u0019X���]\f��i���z!ޑ�\u0003�\u001F$����j.�}\u0013\u0007E�%�\"җaБ{j�������1�?K������\u001A�\u0016�\u0018�����\u001FW�m\u001C�ݴ�\f�Lָ#\u000B�\u0015\u0000E]]>&#x7f;<![CDATA[jy������*\f��\u0005\u0016���_�@`�s�9�\\��u�[ϟvh�\\�\n-B:���h�q�`b6�����8?0���=�[�\ffG]��\u0000�C\u0014�A0*ל�\u0011p�DsC��A63j���p\u0003�\u0001�\u0005��V�� *��D��q� ��d�\u0003�ZN�s\u0019���D�76>a�\u000B�\"�\u0018d�@��\u0005\u0003��pAf��\u0003\u0011�{\u001E\u001Cd��\u0006&���D]]>&#x7f;<![CDATA[\u001AU\u0010>]\u000E[��S�u\\C��<!�\u001B�.�`\fǵd�.\u001B\\\u000F5]]>&#x7f;<![CDATA[iD@�F~��\b�ǹ��'��A1�uP�^�V��-U��\u001C\u0003��c)�4��$�'��\u000F���'��rI�Q\\,\b$�2�vՑ2�\t#NU�W)'w��\t,m6a:�d�\u0001t��5��O���3^巠Ҳ\u0006���\u001B��&q\u00037\u00134�А��\\\u0006[\fb\u001AL�r(�H0�Suv~\n[-1��\u0012�x�`0\n�>v�΍d~e�M�ޖn�f� ^\f\u00119\u000F\f���Zߐ$�ݵ�ٖDeB�]]>&#x7f;<![CDATA[��a�3�&�;tQ\u0017�|7m?&`U�P\u0000�w\u0003\u0015��emjI�x�/#�4�~\u0015�\u0018����V�\u0004��\u0006{�0$\u001A�/D�X3^�z��c�i]�\u0015�\\Kr<(\u0006���f�?�`\u0013Q}\u0006\u0015!�\u001E]����\u000B�\u0019≇Qt\u0006A��I�I>$��FΑ��ưq\u001E�;D���[\u000F9�\u0006\u0001\u001AF�r�q��3r{lI��E�+���d�%\u0001X���\u001B\u0002�e\f0�\u000E�R\u001B�t�H%��~���#p��ό��\u0005ɏYŢ��zzi����9��^��<��\u0018�|Mu��'0�'DԪe{��R�^\u0003�h\u0004X�L�.�ۤ>B\u0006�`܎�ρy���\u0017\u0006\u0017�r�@��\u001Dä\u001A���t��-ﴃ�^�\u001Eh��H?���`U\u001EE��+E��\u001Bِ\u0010�qy�Ҝi�Z��Jp6V㓎��\u0004����d�����\u0002}�-^�\u001F8�Ȑ�W�����8��X����)\u00106�\fr�\u000E\b�\u0006�\u0000\u0000\u0000\u0001\u0000\u0005X.509\u0000\u0000\u0002�0�\u0002�0�\u0002A\u0002\u0002\u0006\"0\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u00000j1\u00100\u000E\u0006\u0003U\u0004\n\u0013\u0007Neustar1\u000B0\t\u0006\u0003U\u0004\u000B\u0013\u0002QA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1\u00110\u000F\u0006\u0003U\u0004\b\u0013\bVirginia1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u00160\u0014\u0006\u0003U\u0004\u0003\u0013\rneustar.qa.ca0\u001E\u0017\r150423050332Z\u0017\r200421050332Z0z1\u000B0\t\u0006\u0003U\u0004\u0006\u0013\u0002US1\u000B0\t\u0006\u0003U\u0004\b\u0013\u0002VA1\u00110\u000F\u0006\u0003U\u0004\u0007\u0013\bSterling1+0)\u0006\u0003U\u0004\u0003\u0013\"urn:dece:org:org:dece:org1Retailer1\u001E0\u001C\u0006\t*�H��\r\u0001\t\u0001\u0016\u000Ffoo@neustar.com0�\u0001\"0\r\u0006\t*�H��\r\u0001\u0001\u0001\u0005\u0000\u0003�\u0001\u000F\u00000�\u0001\n\u0002�\u0001\u0001\u0000��a�b�������Ix4!�b��e\u0017�F��Y�\u000F��\u0004.%&���&K�d��+i�\b7Xx��\u001C�\u001A\u000BΧa\u0019�\u0012'\u0004�)\u0005\u001BI�Md�]]>&#x7f;<![CDATA[�Y\t�Z����8��\u001F;�\u0010�&�\u000E\u001BH&IAeyd\u001Bk1\u0013\u001FXW����(S�Af�\u0017��۠\\Q�1@�m<K���K�UF�\u001A��ˆ�\u000B\t7�n��#�]]>&#x84;<![CDATA[\u0007�_k����{#\u0011��?\n\u000F�|�\u0017��:�\u0015oT�~\u0013���8�,�*�\u0004�@F<:L��@�s�g\u0006�;P^*�U'u�+�9\u000E`tq_:���\u0014���GuP��:&\u0001��I\u0002\u0003\u0001\u0000\u00010\r\u0006\t*�H��\r\u0001\u0001\u0005\u0005\u0000\u0003��\u0000\u0001�[q`:ikdoS����(��s������x�u\u001F��\u0006��.\u001DG�Q���U\u001C޴\u0004H���W��\u0000\u0010b�騚�द�;�O�=�%\u001Cʓ���%��-P!#���x�D8��\u000B�J�Ww�}\u00103r{��\u0000HV�E���XhD<�\u0012\u0013�\u000Ey8E��|���M\u001B~T�F\u0011��V�\u001Dd\r\n--Boundary_1_1217803181_1452301422319--\r\n"
+	}
+
+
+[nioEventLoopGroup-3-6] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/ResourceA/2",
+	    "headers" : [ {
+	      "name" : "Authorization",
+	      "values" : [ "Yes" ]
+	    } ]
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : { },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+ because:
+
+	methodMatches = true
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  } ]
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{ }
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+ because:
+
+	methodMatches = true
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  } ]
+	}
+
+ because:
+
+	methodMatches = true
+	pathMatches = true
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = false
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "statusCode" : 404
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+
+[nioEventLoopGroup-3-7] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/ResourceA/1"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "headers" : [ {
+	      "name" : "Content-Type",
+	      "values" : [ "application/json" ]
+	    } ],
+	    "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+
+[nioEventLoopGroup-3-9] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "PUT",
+	    "path" : "/ResourceA/1",
+	    "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "headers" : [ {
+	      "name" : "Content-Type",
+	      "values" : [ "application/json" ]
+	    } ],
+	    "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ for request:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+
+[nioEventLoopGroup-3-10] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/ResourceA/QueryParams/1",
+	    "queryStringParameters" : [ {
+	      "name" : "queryParam1",
+	      "values" : [ "value1" ]
+	    } ]
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "headers" : [ {
+	      "name" : "Content-Type",
+	      "values" : [ "application/json" ]
+	    } ],
+	    "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ],
+	  "headers" : [ {
+	    "name" : "Header1",
+	    "values" : [ "Value1" ]
+	  }, {
+	    "name" : "Header2",
+	    "values" : [ "Value2" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ],
+	  "headers" : [ {
+	    "name" : "Header1",
+	    "values" : [ "Value1" ]
+	  }, {
+	    "name" : "Header2",
+	    "values" : [ "Value2" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ],
+	  "headers" : [ {
+	    "name" : "Header1",
+	    "values" : [ "Value1" ]
+	  }, {
+	    "name" : "Header2",
+	    "values" : [ "Value2" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  } ]
+	}
+
+ because:
+
+	methodMatches = true
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = false
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ],
+	  "headers" : [ {
+	    "name" : "Header1",
+	    "values" : [ "Value1" ]
+	  }, {
+	    "name" : "Header2",
+	    "values" : [ "Value2" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+ because:
+
+	methodMatches = true
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ],
+	  "headers" : [ {
+	    "name" : "Header1",
+	    "values" : [ "Value1" ]
+	  }, {
+	    "name" : "Header2",
+	    "values" : [ "Value2" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ],
+	  "headers" : [ {
+	    "name" : "Header1",
+	    "values" : [ "Value1" ]
+	  }, {
+	    "name" : "Header2",
+	    "values" : [ "Value2" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ]
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ],
+	  "headers" : [ {
+	    "name" : "Header1",
+	    "values" : [ "Value1" ]
+	  }, {
+	    "name" : "Header2",
+	    "values" : [ "Value2" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+
+[nioEventLoopGroup-3-11] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "POST",
+	    "path" : "/ResourceA",
+	    "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 201,
+	    "headers" : [ {
+	      "name" : "Location",
+	      "values" : [ "https://www.mock-server.com" ]
+	    } ]
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "statusCode" : 201,
+	  "headers" : [ {
+	    "name" : "Location",
+	    "values" : [ "https://www.mock-server.com" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  } ]
+	}
+
+ for request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "37" ]
+	  } ],
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+
+[nioEventLoopGroup-3-12] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "POST",
+	    "path" : "/ResourceA",
+	    "body" : {
+	      "type" : "PARAMETERS",
+	      "value" : [ {
+	        "name" : "Parameter1",
+	        "values" : [ "Value1" ]
+	      } ]
+	    }
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 201,
+	    "headers" : [ {
+	      "name" : "Location",
+	      "values" : [ "https://www.mock-server.com" ]
+	    } ]
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/x-www-form-urlencoded" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "17" ]
+	  } ],
+	  "body" : {
+	    "type" : "BINARY",
+	    "value" : "UGFyYW1ldGVyMT1WYWx1ZTE="
+	  }
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload"
+	}
+
+ because:
+
+	methodMatches = true
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/x-www-form-urlencoded" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "17" ]
+	  } ],
+	  "body" : {
+	    "type" : "BINARY",
+	    "value" : "UGFyYW1ldGVyMT1WYWx1ZTE="
+	  }
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  } ]
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = false
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/x-www-form-urlencoded" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "17" ]
+	  } ],
+	  "body" : {
+	    "type" : "BINARY",
+	    "value" : "UGFyYW1ldGVyMT1WYWx1ZTE="
+	  }
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/x-www-form-urlencoded" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "17" ]
+	  } ],
+	  "body" : {
+	    "type" : "BINARY",
+	    "value" : "UGFyYW1ldGVyMT1WYWx1ZTE="
+	  }
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/x-www-form-urlencoded" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "17" ]
+	  } ],
+	  "body" : {
+	    "type" : "BINARY",
+	    "value" : "UGFyYW1ldGVyMT1WYWx1ZTE="
+	  }
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ]
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = false
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/x-www-form-urlencoded" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "17" ]
+	  } ],
+	  "body" : {
+	    "type" : "BINARY",
+	    "value" : "UGFyYW1ldGVyMT1WYWx1ZTE="
+	  }
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = true
+	pathMatches = true
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/x-www-form-urlencoded" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "17" ]
+	  } ],
+	  "body" : {
+	    "type" : "BINARY",
+	    "value" : "UGFyYW1ldGVyMT1WYWx1ZTE="
+	  }
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : {
+	    "type" : "PARAMETERS",
+	    "value" : [ {
+	      "name" : "Parameter1",
+	      "values" : [ "Value1" ]
+	    } ]
+	  }
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "statusCode" : 201,
+	  "headers" : [ {
+	    "name" : "Location",
+	    "values" : [ "https://www.mock-server.com" ]
+	  } ]
+	}
+
+ for request:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/x-www-form-urlencoded" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "17" ]
+	  } ],
+	  "body" : {
+	    "type" : "BINARY",
+	    "value" : "UGFyYW1ldGVyMT1WYWx1ZTE="
+	  }
+	}
+
+
+[nioEventLoopGroup-3-13] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "DELETE",
+	    "path" : "/ResourceA/1"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 204
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  } ]
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = false
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = true
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = true
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ]
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = false
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : {
+	    "type" : "PARAMETERS",
+	    "value" : [ {
+	      "name" : "Parameter1",
+	      "values" : [ "Value1" ]
+	    } ]
+	  }
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1"
+	}
+
+
+[nioEventLoopGroup-3-8] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "statusCode" : 204
+	}
+
+ for request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+
+[nioEventLoopGroup-3-14] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "DELETE",
+	    "path" : "/ResourceA/1"
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "statusCode" : 204
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  } ]
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = false
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = true
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = true
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ]
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = false
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : {
+	    "type" : "PARAMETERS",
+	    "value" : [ {
+	      "name" : "Parameter1",
+	      "values" : [ "Value1" ]
+	    } ]
+	  }
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1"
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "statusCode" : 204,
+	  "headers" : [ {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  } ]
+	}
+
+ for request:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1",
+	  "headers" : [ {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+
+[nioEventLoopGroup-3-15] INFO org.mockserver.mockserver.MockServerHandler - creating expectation:
+
+	{
+	  "httpRequest" : {
+	    "method" : "GET",
+	    "path" : "/ResourceA/Encoding/1",
+	    "headers" : [ {
+	      "name" : "Accept-Encoding",
+	      "values" : [ "deflate,gzip" ]
+	    } ]
+	  },
+	  "times" : {
+	    "remainingTimes" : 0,
+	    "unlimited" : true
+	  },
+	  "timeToLive" : {
+	    "unlimited" : true
+	  },
+	  "httpResponse" : {
+	    "headers" : [ {
+	      "name" : "Content-Type",
+	      "values" : [ "application/json" ]
+	    }, {
+	      "name" : "Content-Encoding",
+	      "values" : [ "gzip" ]
+	    } ],
+	    "body" : {
+	      "type" : "BINARY",
+	      "value" : "H4sIAAAAAAAAAKtWKkgsSsw1VLJSKkvMKU01VNKBiBjBRIyUagEU7gilJQAAAA=="
+	    }
+	  },
+	  "stillAlive" : true
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/Encoding/1",
+	  "headers" : [ {
+	    "name" : "Accept-Encoding",
+	    "values" : [ "deflate,gzip" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/MultiFileUpload"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/Encoding/1",
+	  "headers" : [ {
+	    "name" : "Accept-Encoding",
+	    "values" : [ "deflate,gzip" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/2",
+	  "headers" : [ {
+	    "name" : "Authorization",
+	    "values" : [ "Yes" ]
+	  } ]
+	}
+
+ because:
+
+	methodMatches = true
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = false
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/Encoding/1",
+	  "headers" : [ {
+	    "name" : "Accept-Encoding",
+	    "values" : [ "deflate,gzip" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/1"
+	}
+
+ because:
+
+	methodMatches = true
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/Encoding/1",
+	  "headers" : [ {
+	    "name" : "Accept-Encoding",
+	    "values" : [ "deflate,gzip" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "PUT",
+	  "path" : "/ResourceA/1",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/Encoding/1",
+	  "headers" : [ {
+	    "name" : "Accept-Encoding",
+	    "values" : [ "deflate,gzip" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/QueryParams/1",
+	  "queryStringParameters" : [ {
+	    "name" : "queryParam1",
+	    "values" : [ "value1" ]
+	  } ]
+	}
+
+ because:
+
+	methodMatches = true
+	pathMatches = false
+	queryStringParametersMatch = false
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/Encoding/1",
+	  "headers" : [ {
+	    "name" : "Accept-Encoding",
+	    "values" : [ "deflate,gzip" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : "{\"param1\":\"value1\",\"param2\":\"value2\"}"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/Encoding/1",
+	  "headers" : [ {
+	    "name" : "Accept-Encoding",
+	    "values" : [ "deflate,gzip" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "POST",
+	  "path" : "/ResourceA",
+	  "body" : {
+	    "type" : "PARAMETERS",
+	    "value" : [ {
+	      "name" : "Parameter1",
+	      "values" : [ "Value1" ]
+	    } ]
+	  }
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = false
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/Encoding/1",
+	  "headers" : [ {
+	    "name" : "Accept-Encoding",
+	    "values" : [ "deflate,gzip" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ did not match expectation:
+
+	{
+	  "method" : "DELETE",
+	  "path" : "/ResourceA/1"
+	}
+
+ because:
+
+	methodMatches = false
+	pathMatches = false
+	queryStringParametersMatch = true
+	bodyMatches = true
+	headersMatch = true
+	cookiesMatch = true
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.matchers.HttpRequestMatcher - request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/Encoding/1",
+	  "headers" : [ {
+	    "name" : "Accept-Encoding",
+	    "values" : [ "deflate,gzip" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Connection",
+	    "values" : [ "keep-alive" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+ matched expectation:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/Encoding/1",
+	  "headers" : [ {
+	    "name" : "Accept-Encoding",
+	    "values" : [ "deflate,gzip" ]
+	  } ]
+	}
+
+
+[nioEventLoopGroup-3-2] INFO org.mockserver.mockserver.MockServerHandler - returning response:
+
+	{
+	  "headers" : [ {
+	    "name" : "Content-Type",
+	    "values" : [ "application/json" ]
+	  }, {
+	    "name" : "Content-Encoding",
+	    "values" : [ "gzip" ]
+	  } ],
+	  "body" : {
+	    "type" : "BINARY",
+	    "value" : "H4sIAAAAAAAAAKtWKkgsSsw1VLJSKkvMKU01VNKBiBjBRIyUagEU7gilJQAAAA=="
+	  }
+	}
+
+ for request:
+
+	{
+	  "method" : "GET",
+	  "path" : "/ResourceA/Encoding/1",
+	  "headers" : [ {
+	    "name" : "Accept-Encoding",
+	    "values" : [ "deflate,gzip" ]
+	  }, {
+	    "name" : "User-Agent",
+	    "values" : [ "Jersey/2.17 (HttpUrlConnection 1.8.0_40)" ]
+	  }, {
+	    "name" : "Host",
+	    "values" : [ "localhost:1080" ]
+	  }, {
+	    "name" : "Accept",
+	    "values" : [ "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2" ]
+	  }, {
+	    "name" : "Content-Length",
+	    "values" : [ "0" ]
+	  } ]
+	}
+
+
+]]></system-err>
+</testsuite>
