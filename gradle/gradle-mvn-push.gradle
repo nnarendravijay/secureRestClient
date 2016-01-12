@@ -76,23 +76,6 @@ afterEvaluate { project ->
         sign configurations.archives
     }
 
-//    task androidJavadocs(type: Javadoc) {
-//        source = android.sourceSets.main.java.srcDirs
-//        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-//    }
-//
-//    task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
-//        classifier = 'javadoc'
-//        from androidJavadocs.destinationDir
-//    }
-//
-//    task androidSourcesJar(type: Jar) {
-//        classifier = 'sources'
-//        from android.sourceSets.main.java.sourceFiles
-//    }
-
-
-
     task sourcesJar(type: Jar, dependsOn: classes) {
         classifier = 'sources'
         from sourceSets.main.allSource
@@ -108,9 +91,4 @@ afterEvaluate { project ->
         archives javadocJar
     }
 
-
-//    artifacts { // define the artifacts for a service
-//        archives sourcesJar { classifier "sources" }
-//        archives docJar { classifier "javadoc" }
-//    }
 }
