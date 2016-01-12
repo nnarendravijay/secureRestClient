@@ -2,11 +2,11 @@ This library provides support to make HTTP or HTTPS requests to RESTful services
 
 Use the following for Maven/Gradle Dependencies:
 
-<dependency>
-  <groupId>com.nnarendravijay</groupId>
-  <artifactId>secureRestClient</artifactId>
-  <version>0.0.1</version>
-</dependency>
+    <dependency>
+        <groupId>com.nnarendravijay</groupId>
+        <artifactId>secureRestClient</artifactId>
+        <version>0.0.1</version>
+    </dependency>
 
 The SSL variant accepts certificates in the JKS format. You can provide multiple certificates as part of one keystore and simplify cert management. The client also by default uses SSL reuse and reduces the overhead of establishing TCP and SSL session for multiple requests and hence is faster.
 

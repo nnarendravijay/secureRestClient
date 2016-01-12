@@ -14,6 +14,7 @@ allprojects {
 apply plugin: 'java'
 apply plugin: 'idea'
 apply from: file('gradle/codechecks.gradle')
+apply from: file('gradle/gradle-mvn-push.gradle')
 
 repositories {
     mavenCentral()
