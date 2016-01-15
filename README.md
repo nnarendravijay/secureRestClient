@@ -22,7 +22,7 @@ Unit tests are part of the project and you can refer to the tests for sample usa
 
 To send a HTTP Post request, invoke the following method:
 
-Response sendPostRequest(Object object, URI uri, MediaType mediaType); 
+    Response sendPostRequest(Object object, URI uri, MediaType mediaType); 
 Where 	1. Object is any java object that needs to be sent across as the HTTP Body. 
 		2. URI is the URL to which the request needs to be sent to.
 		3. MediaType is the application mediaType; for example, MediaType.APPLICATION_XML_TYPE or APPLICATION_JSON_TYPE or MULTIPART_FORM_DATA or TEXT_PLAIN.
@@ -32,22 +32,22 @@ Example: client.sendPostRequest(account, uri, MediaType.APPLICATION_XML_TYPE);
 
 To send a HTTP Get request, invoke the following method:
 
-Response sendGetRequest(URI uri);
+    Response sendGetRequest(URI uri);
 
 To send a HTTP Put request, invoke the following method:
 
-Response sendPutRequest(Object object, URI uri);
+    Response sendPutRequest(Object object, URI uri);
 
 To send a HTTP Delete request, invoke the following method:
 
-Response sendDeleteRequest(URI uri);
+    Response sendDeleteRequest(URI uri);
 
 The library supports adding different HTTP headers. To add a header, use:
 
-void addHeader(String header, String value);
+    void addHeader(String header, String value);
 
 To remove a header, use 
 
-void removeHeader(String header);
+    void removeHeader(String header);
 
 When the client needs "Accept-Encoding" of GZip, the library internally takes care of reading a GZipped response when the "Content-Encoding" is set to GZIP and provides the unzipped response to the caller.
