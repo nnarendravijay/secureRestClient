@@ -1,6 +1,8 @@
 package com.nnarendravijay;
 
+import com.google.common.base.Preconditions;
 import com.google.common.io.Resources;
+import org.apache.commons.lang3.StringUtils;
 import org.glassfish.jersey.SslConfigurator;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.slf4j.Logger;
@@ -59,6 +61,13 @@ public class RestClient {
   }
 
   public RestClient(String keyStore, String keyStorePasswd, String keyStoreAlias, String tlsVersion) {
+
+    Preconditions.checkState(StringUtils.isNotBlank(keyStore), "Keystore cannot be null or blank");
+    Preconditions.checkState(StringUtils.isNotBlank(keyStoreAlias), "keyStoreAlias cannot be null or blank");
+    Preconditions.checkState(StringUtils.isNotBlank(tlsVersion), "tlsVersion cannot be null or blank");
+    Preconditions.checkNotNull(keyStorePasswd, "KeystorePasswd cannot be null");
+    Preconditions.checkNotNull(Resources.getResource(keyStore), "keyStore file does NOT exist");
+
     client = createSSLClient(keyStore, keyStorePasswd, keyStoreAlias, tlsVersion);
   }
 
