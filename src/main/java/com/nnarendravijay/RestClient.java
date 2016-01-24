@@ -229,8 +229,8 @@ public class RestClient {
     multivaluedMap.putSingle(header, value);
   }
 
-  public void putIfAbsent(String header, List<Object> value) {
-    multivaluedMap.putIfAbsent(header, value);
+  public void addHeader(String header, List<Object> value) {
+    multivaluedMap.put(header, value);
   }
 
   public void addHeaders(Map<String, String> headers) {
