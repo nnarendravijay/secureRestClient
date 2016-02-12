@@ -10,6 +10,9 @@ Use the following for Maven/Gradle Dependencies:
 
 The SSL variant accepts certificates in the JKS format. You can provide multiple certificates as part of one keystore and simplify cert management. The client also by default uses SSL reuse and reduces the overhead of establishing TCP and SSL session for multiple requests and hence is faster.
 
+Setting up the Client:
+---------------------
+
 To get a client with SSL capabilities, use the following constructor:
 
 	RestClient(String keyStore, String keyStorePassword, String keyStoreAlias, String tlsVersion);
@@ -20,12 +23,17 @@ To get a client with just HTTP and NO SSL capabilities, use the no-arg construct
 
 Unit tests are part of the project and you can refer to the tests for sample usage of the library. It internally uses Jersey and JSSE and hides all the details of acquiring an SSL or non-SSL connection to a server.
 
+Sending GET/PUT/POST/DELETE:
+---------------------------
+
 To send a HTTP Post request, invoke the following method:
 
     Response sendPostRequest(Object object, URI uri, MediaType mediaType); 
+    
 Where 	1. Object is any java object that needs to be sent across as the HTTP Body. 
 		2. URI is the URL to which the request needs to be sent to.
 		3. MediaType is the application mediaType; for example, MediaType.APPLICATION_XML_TYPE or APPLICATION_JSON_TYPE or MULTIPART_FORM_DATA or TEXT_PLAIN.
+		
 The library internally takes care of marshalling and unmarshalling when the mediaType is APPLICATION_XML(provided the schema has been provided). Also, internally takes care of serialization and de-serialization when the mediaType is APPLICATION_JSON. 
 
 Example: client.sendPostRequest(account, uri, MediaType.APPLICATION_XML_TYPE);
@@ -51,3 +59,7 @@ To remove a header, use
     void removeHeader(String header);
 
 When the client needs "Accept-Encoding" of GZip, the library internally takes care of reading a GZipped response when the "Content-Encoding" is set to GZIP and provides the unzipped response to the caller.
+
+Performance:
+------------
+The library internally takes care of HTTP Keep-Alive for Non-SSL Variants and also SSL Reuse for the SSL variant by default. As such, multiple transactions need a single connection. And has proven to be faster.
